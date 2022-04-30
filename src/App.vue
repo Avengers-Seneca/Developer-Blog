@@ -3,16 +3,19 @@
   <main class="container yx-t max-width-adaptive-lg yx-sg">
     <router-view />
   </main>
+  <Footer/>
 </template>
 
 <script>
 // @ is an alias to /src
 import DrawerNavigation from "@/components/DrawerNavigation.vue";
+import Footer from "@/components/Footer.vue";
 
 export default {
   name: "App",
   components: {
     DrawerNavigation,
+    Footer
   },
 };
 </script>
