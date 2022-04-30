@@ -12,7 +12,7 @@
           items-center@md
         "
       >
-        <h4 class="margin-bottom-xs hide@md">Popular links</h4>
+        
         <nav>
           <ul class="flex flex-wrap gap-xxs">
             <!-- <li><a class="footer-v5__popular-link" href="#0">Pricing</a></li>
@@ -25,7 +25,7 @@
           </ul>
         </nav>
 
-        <a href="#" class="footer-v5__back-to-top display@md"
+        <a href="#" class="footer-v5__back-to-top"
           >Back to top &uarr;</a
         >
       </div>
