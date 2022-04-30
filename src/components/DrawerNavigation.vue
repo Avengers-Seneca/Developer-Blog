@@ -156,7 +156,7 @@ export default {
   name: "DrawerNavigation",
   mounted() {
     let frontEnd = document.createElement("script");
-    frontEnd.setAttribute("src", "./drawer-navigation.js");
+    frontEnd.setAttribute("src", "js/drawer-navigation.js");
     frontEnd.setAttribute("id", "drawer-navigation-js");
 
     document.body.appendChild(frontEnd);
