@@ -5,7 +5,7 @@
   <article class="story story--featured margin-bottom-sm">
     <a class="story__img radius-md" href="#0">
       <figure class="aspect-ratio-4:3">
-        <img src="img/article-preview-img-2.jpg" alt="Image description" />
+        <img :src="featuredArticle.articleImg" alt="Image description" />
       </figure>
     </a>
 
@@ -32,35 +32,34 @@
               ></path>
             </g>
           </svg>
-          <i>Podcast</i>
+          <i>{{ featuredArticle.tag }}</i>
         </a>
       </div>
 
       <div class="text-component">
         <h2 class="story__title">
           <a href="#0"
-            >A dolor sit, amet consectetur adipisicing elit.</a
+            >{{ featuredArticle.title }}</a
           >
         </h2>
         <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. At iusto sit
-          quasi aliquam quod laboriosam. Nobis, modi repellendus.
+          {{ featuredArticle.content }}
         </p>
       </div>
 
       <div class="story__author margin-top-sm">
         <a class="block" href="#0">
           <img
-            src="img/article-preview-img-author-1.svg"
+            :src="featuredArticle.authorImg"
             alt="Author picture"
           />
         </a>
 
         <div class="line-height-xs">
           <address class="story__author-name">
-            <a href="#0" rel="author">Olivia Gribben</a>
+            <a href="#0" rel="author">{{ featuredArticle.author }}</a>
           </address>
-          <p class="story__meta"><time>May 16</time> &mdash; 5 min read</p>
+          <p class="story__meta"><time>{{ featuredArticle.datePublished }}</time> &mdash; 5 min read</p>
         </div>
       </div>
     </div>
@@ -70,6 +69,9 @@
 <script>
 export default {
   name: "ArticlePreviewFeatured",
+  props: {
+    featuredArticle: Object
+  }
 };
 </script>
 
