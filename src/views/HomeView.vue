@@ -1,9 +1,9 @@
 <template>
   <div class="home">
     <ArticlePreviewFeatured :featuredArticle="featuredArticle" />
-    <ArticlePreview />
-    <ArticlePreview />
-    <ArticlePreview />
+    <div :key="article.id" v-for="article in articles">
+      <ArticlePreview :article="article" />
+    </div>
     <Team />
   </div>
 </template>
@@ -26,7 +26,7 @@ export default {
   data() {
     return {
       articles: [],
-      featuredArticle: new Object()
+      featuredArticle: new Object(),
     };
   },
   methods: {
@@ -42,54 +42,58 @@ export default {
         {
           id: 1,
           title: "A sample Blog 1",
-          content: "Lorem ipsum dolor sit amet consectetur adipisicing elit. At iusto sit quasi aliquam quod laboriosam. Nobis, modi repellendus.",
+          content:
+            "Lorem ipsum dolor sit amet consectetur adipisicing elit. At iusto sit quasi aliquam quod laboriosam. Nobis, modi repellendus.",
           author: "Alice Han",
           datePublished: "May 1, 2022",
           tag: "Programming",
           authorImg: "img/article-preview-img-author-1.svg",
           articleImg: "img/article-preview-img-2.jpg",
-          isFeatured: true
+          isFeatured: true,
         },
         {
           id: 2,
           title: "A sample Blog 2",
-          content: "Lorem ipsum dolor sit amet consectetur adipisicing elit. At iusto sit quasi aliquam quod laboriosam. Nobis, modi repellendus.",
+          content:
+            "Lorem ipsum dolor sit amet consectetur adipisicing elit. At iusto sit quasi aliquam quod laboriosam. Nobis, modi repellendus.",
           author: "Alice Han",
           datePublished: "May 1, 2022",
           tag: "Programming",
           authorImg: "img/article-preview-img-author-1.svg",
           articleImg: "img/article-preview-img-2.jpg",
-          isFeatured: true
+          isFeatured: true,
         },
         {
           id: 3,
           title: "A sample Blog 3",
-          content: "Lorem ipsum dolor sit amet consectetur adipisicing elit. At iusto sit quasi aliquam quod laboriosam. Nobis, modi repellendus.",
+          content:
+            "Lorem ipsum dolor sit amet consectetur adipisicing elit. At iusto sit quasi aliquam quod laboriosam. Nobis, modi repellendus.",
           author: "John Doe",
           datePublished: "May 1, 2022",
           tag: "Programming",
           authorImg: "img/article-preview-img-author-1.svg",
           articleImg: "img/article-preview-img-2.jpg",
-          isFeatured: true
+          isFeatured: true,
         },
         {
           id: 4,
           title: "A sample Blog 4",
-          content: "Lorem ipsum dolor sit amet consectetur adipisicing elit. At iusto sit quasi aliquam quod laboriosam. Nobis, modi repellendus.",
+          content:
+            "Lorem ipsum dolor sit amet consectetur adipisicing elit. At iusto sit quasi aliquam quod laboriosam. Nobis, modi repellendus.",
           author: "Jane Doe",
           datePublished: "May 1, 2022",
           tag: "Programming",
           authorImg: "img/article-preview-img-author-1.svg",
           articleImg: "img/article-preview-img-2.jpg",
-          isFeatured: false
+          isFeatured: false,
         },
-        ]
+      ];
       return data;
     },
   },
   created() {
-    // this.articles = this.fetchArticles().filter(a => a.isFeatured).slice(1);
-    this.featuredArticle = this.fetchArticles().find(a => a.isFeatured);
-  }
+    this.articles = this.fetchArticles().filter(article => article.isFeatured).slice(1);
+    this.featuredArticle = this.fetchArticles().find((a) => a.isFeatured);
+  },
 };
 </script>

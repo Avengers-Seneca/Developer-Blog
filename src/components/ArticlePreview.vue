@@ -11,17 +11,16 @@
     <div class="grid gap-md">
       <div class="col-3@md col-2@lg">
         <p class="text-sm position-relative z-index-2">
-          <time datetime="2020-06-17">June 17, 2020</time>
+          <time>{{ article.datePublished }}</time>
         </p>
       </div>
 
       <div class="text-component col-6@md position-relative z-index-2">
         <h1 class="story-v3__title text-xl">
-          Apparently we had reached a great height in the atmosphere
+          {{ article.title }}
         </h1>
         <p class="text-sm color-contrast-higher opacity-50%">
-          Looking down into the dark gulf below, I could see a ruddy light
-          streaming through a rift in the clouds.
+          {{ article.content.slice(0, 150) }}...
         </p>
       </div>
 
@@ -49,6 +48,9 @@
 <script>
 export default {
   name: "ArticlePreview",
+  props: {
+    article: Object
+  },
   mounted() {
     let frontEnd = document.createElement("script");
     frontEnd.setAttribute("src", "js/article-preview.js");
