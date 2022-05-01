@@ -1,9 +1,12 @@
 <template>
-  <DrawerNavigation />
-  <main class="container yx-t max-width-adaptive-md yx-sg">
-    <router-view />
-  </main>
-  <Footer/>
+  
+    <DrawerNavigation />
+    <div data-theme="dark">
+    <main class="container yx-t max-width-adaptive-md yx-sg">
+      <router-view />
+    </main>
+    <Footer />
+  </div>
 </template>
 
 <script>
@@ -15,7 +18,7 @@ export default {
   name: "App",
   components: {
     DrawerNavigation,
-    Footer
+    Footer,
   },
 };
 </script>
