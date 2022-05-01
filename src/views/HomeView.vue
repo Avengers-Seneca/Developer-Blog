@@ -1,6 +1,7 @@
 <template>
   <div class="home">
     <ArticlePreviewFeatured />
+    <ArticlePreview/>
     <Team/>
   </div>
 </template>
@@ -10,13 +11,15 @@
 import HelloWorld from "@/components/HelloWorld.vue";
 import ArticlePreviewFeatured from "@/components/ArticlePreviewFeatured.vue";
 import Team from "@/components/Team.vue";
+import ArticlePreview from "@/components/ArticlePreview.vue";
 
 export default {
   name: "HomeView",
   components: {
     HelloWorld,
     ArticlePreviewFeatured,
-    Team
+    Team,
+    ArticlePreview
   },
 };
 </script>

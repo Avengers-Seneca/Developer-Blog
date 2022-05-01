@@ -39,7 +39,7 @@
       <div class="text-component">
         <h2 class="story__title">
           <a href="#0"
-            >Lorem ipsum dolor sit, amet consectetur adipisicing elit.</a
+            >A dolor sit, amet consectetur adipisicing elit.</a
           >
         </h2>
         <p>
