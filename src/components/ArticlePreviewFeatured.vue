@@ -1,11 +1,11 @@
 <template>
-<article class="story story--featured">
+  <div class="margin-bottom-lg text-center">
+    <h1>Featured Blog</h1>
+  </div>
+  <article class="story story--featured">
     <a class="story__img radius-md" href="#0">
       <figure class="aspect-ratio-4:3">
-        <img
-          src="img/article-preview-img-2.jpg"
-          alt="Image description"
-        />
+        <img src="img/article-preview-img-2.jpg" alt="Image description" />
       </figure>
     </a>
 
@@ -65,8 +65,6 @@
       </div>
     </div>
   </article>
-
-  
 </template>
 
 <script>

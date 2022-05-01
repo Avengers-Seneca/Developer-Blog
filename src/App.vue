@@ -1,6 +1,6 @@
 <template>
   <DrawerNavigation />
-  <main class="container yx-t max-width-adaptive-lg yx-sg">
+  <main class="container yx-t max-width-adaptive-md yx-sg">
     <router-view />
   </main>
   <Footer/>
