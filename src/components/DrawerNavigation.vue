@@ -11,46 +11,10 @@
         </svg>
       </router-link>
 
-      <ul class="radio-switch">
-        <li class="radio-switch__item">
-          <input
-            class="radio-switch__input sr-only"
-            type="radio"
-            name="radio-switch-name"
-            id="radio-1"
-            value=""
-            checked
-          />
-          <label class="radio-switch__label" for="radio-1"
-            ><svg class="icon icon--xs" viewBox="0 0 16 16">
-              <title>Enable light mode</title>
-              <path
-                d="M7 0h2v2H7zM12.88 1.637l1.414 1.415-1.415 1.413-1.414-1.414zM14 7h2v2h-2zM12.95 14.433l-1.415-1.414 1.414-1.414 1.415 1.413zM7 14h2v2H7zM2.98 14.363L1.566 12.95l1.415-1.414 1.414 1.415zM0 7h2v2H0zM3.05 1.707L4.465 3.12 3.05 4.535 1.636 3.121z"
-              />
-              <path
-                d="M8 4C5.8 4 4 5.8 4 8s1.8 4 4 4 4-1.8 4-4-1.8-4-4-4z"
-              /></svg
-          ></label>
-        </li>
-
-        <li class="radio-switch__item">
-          <input
-            class="radio-switch__input sr-only"
-            type="radio"
-            name="radio-switch-name"
-            id="radio-2"
-            value=""
-          />
-          <label class="radio-switch__label" for="radio-2"
-            ><svg class="icon icon--xs" viewBox="0 0 16 16">
-              <title>Enable dark mode</title>
-              <path
-                d="M6,0C2.5,0.9,0,4.1,0,7.9C0,12.4,3.6,16,8.1,16c3.8,0,6.9-2.5,7.9-6C9.9,11.7,4.3,6.1,6,0z"
-              ></path></svg
-          ></label>
-          <div aria-hidden="true" class="radio-switch__marker"></div>
-        </li>
-      </ul>
+      <button class="btn btn--basic" aria-controls="modal-login">Login</button>
+      <button class="btn btn--basic" aria-controls="modal-register">
+        Create Account
+      </button>
     </div>
   </header>
 
@@ -70,13 +34,6 @@
             <li>
               <router-link class="dr-nav__link" to="/">
                 <span>Home</span>
-                <span></span>
-              </router-link>
-            </li>
-
-            <li>
-              <router-link class="dr-nav__link" to="/login">
-                <span>Login</span>
                 <span></span>
               </router-link>
             </li>
@@ -156,11 +113,148 @@
       </button>
     </div>
   </div>
+
+  <div
+    data-theme="dark"
+    class="
+      modal modal--animate-scale
+      bg bg-opacity-99%
+      flex flex-center
+      padding-md
+      js-modal
+    "
+    id="modal-login"
+  >
+    <div
+      class="
+        modal__content
+        max-width-xs max-height-100%
+        overflow-auto
+        padding-md
+        text-center
+      "
+      role="alertdialog"
+      aria-labelledby="modal-select-title"
+      aria-describedby=""
+    >
+      <p class="color-contrast-medium margin-bottom-xs" id="modal-select-title">
+        
+      </p>
+
+      <ul
+        class="
+          full-screen-select
+          flex flex-column
+          gap-xxs
+          js-full-screen-select
+        "
+        role="listbox"
+      >
+        <Login />
+      </ul>
+    </div>
+
+    <button
+      class="
+        reset
+        modal__close-btn modal__close-btn--outer
+        js-modal__close
+        js-tab-focus
+      "
+    >
+      <svg class="icon icon--sm" viewBox="0 0 24 24">
+        <title>Close modal window</title>
+        <g
+          fill="none"
+          stroke="currentColor"
+          stroke-miterlimit="10"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        >
+          <line x1="3" y1="3" x2="21" y2="21" />
+          <line x1="21" y1="3" x2="3" y2="21" />
+        </g>
+      </svg>
+    </button>
+  </div>
+
+  <div
+    data-theme="dark"
+    class="
+      modal modal--animate-scale
+      bg bg-opacity-99%
+      flex flex-center
+      padding-md
+      js-modal
+    "
+    id="modal-register"
+  >
+    <div
+      class="
+        modal__content
+        max-width-xs max-height-100%
+        overflow-auto
+        padding-md
+        text-center
+      "
+      role="alertdialog"
+      aria-labelledby="modal-select-title"
+      aria-describedby=""
+    >
+      <p class="color-contrast-medium margin-bottom-xs" id="modal-select-title">
+        
+      </p>
+
+      <ul
+        class="
+          full-screen-select
+          flex flex-column
+          gap-xxs
+          js-full-screen-select
+        "
+        role="listbox"
+      >
+        <SignUp />
+      </ul>
+    </div>
+
+    <button
+      class="
+        reset
+        modal__close-btn modal__close-btn--outer
+        js-modal__close
+        js-tab-focus
+      "
+    >
+      <svg class="icon icon--sm" viewBox="0 0 24 24">
+        <title>Close modal window</title>
+        <g
+          fill="none"
+          stroke="currentColor"
+          stroke-miterlimit="10"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        >
+          <line x1="3" y1="3" x2="21" y2="21" />
+          <line x1="21" y1="3" x2="3" y2="21" />
+        </g>
+      </svg>
+    </button>
+  </div>
 </template>
 
 <script>
+import Login from "@/components/Login.vue";
+import SignUp from "@/components/SignUp.vue";
+
 export default {
   name: "DrawerNavigation",
+  components: {
+    Login,
+    SignUp
+  },
   mounted() {
     let frontEnd = document.createElement("script");
     frontEnd.setAttribute("src", "js/drawer-navigation.js");
@@ -179,5 +273,6 @@ export default {
   as *;
 @use "../../node_modules/codyhouse-framework/main/assets/css/base/mixins" as *;
 
+@use "../assets/css/custom-style/full-screen-select" as *;
 @use "../assets/css/custom-style/drawer-navigation" as *;
 </style>

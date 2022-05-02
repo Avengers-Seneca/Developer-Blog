@@ -43,7 +43,7 @@
         >
           <div>
             <p class="text-sm color-contrast-medium text-xs@md">
-              &copy; Copyright CompanyX
+              &copy; Copyright Avengers-Seneca
             </p>
           </div>
 
