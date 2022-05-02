@@ -13,7 +13,7 @@
 
       <button class="btn btn--basic" aria-controls="modal-login">Login</button>
       <button class="btn btn--basic" aria-controls="modal-register">
-        Create Account
+        Register
       </button>
     </div>
   </header>
@@ -137,9 +137,10 @@
       aria-labelledby="modal-select-title"
       aria-describedby=""
     >
-      <p class="color-contrast-medium margin-bottom-xs" id="modal-select-title">
-        
-      </p>
+      <p
+        class="color-contrast-medium margin-bottom-xs"
+        id="modal-select-title"
+      ></p>
 
       <ul
         class="
@@ -202,9 +203,10 @@
       aria-labelledby="modal-select-title"
       aria-describedby=""
     >
-      <p class="color-contrast-medium margin-bottom-xs" id="modal-select-title">
-        
-      </p>
+      <p
+        class="color-contrast-medium margin-bottom-xs"
+        id="modal-select-title"
+      ></p>
 
       <ul
         class="
@@ -253,7 +255,7 @@ export default {
   name: "DrawerNavigation",
   components: {
     Login,
-    SignUp
+    SignUp,
   },
   mounted() {
     let frontEnd = document.createElement("script");
